@@ -13,7 +13,6 @@ with col2:
 
 st.sidebar.header("Navigation")
 page = st.sidebar.radio("Go to", ["Home", "Analysis", "Help"])
-language = st.sidebar.selectbox("Language", ["English", "Marathi"])
 
 with st.sidebar.expander("🔐 Login"):
     username = st.text_input("Username")
@@ -22,21 +21,21 @@ with st.sidebar.expander("🔐 Login"):
         st.success(f"Welcome, {username}!")
 
 if page == "Home":
-    st.subheader("Statmate मध्ये स्वागत आहे!")
-    st.write("रुग्ण डेटाचा अभ्यास करा. CSV फाइल अपलोड करा.")
+    st.subheader("Welcome to Statmate!")
+    st.write("Analyze patient cohorts, clinical trials, and healthcare insights.")
 
-    st.file_uploader("📂 CSV डेटा अपलोड करा", type=["csv"])
-    st.selectbox("🔍 फिल्टर", ["वय", "रुग्ण स्थिती", "ठिकाण"])
+    st.file_uploader("📂 Upload Clinical Dataset (.csv)", type=["csv"])
+    st.selectbox("🔍 Filter by", ["Age", "Condition", "Trial Site"])
 
-    st.image("sample_chart.png", caption="चाचणी स्टेटस विहंगावलोकन")
+    st.image("sample_chart.png", caption="Trial Status Overview")
 
 elif page == "Analysis":
-    st.subheader("डेटा विश्लेषण (लवकरच)")
-    st.info("इथे ग्राफ आणि अहवाल दिसतील.")
+    st.subheader("Data Analysis (Coming Soon)")
+    st.info("This section will show live graphs and cohort reports.")
 
 elif page == "Help":
-    st.subheader("मदत")
-    st.markdown("📧 संपर्क: support@statmate.ai")
+    st.subheader("Help & Support")
+    st.markdown("For assistance, contact us at [support@statmate.ai](mailto:support@statmate.ai)")
 
 st.markdown("---")
 st.caption("© 2025 Statmate · Powered by Streamlit")
